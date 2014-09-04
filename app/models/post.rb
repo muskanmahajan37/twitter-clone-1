@@ -7,6 +7,8 @@ class Post < ActiveRecord::Base
 
   def check_mentions
     user = User.basic_search(self.content).first
-    UserMailer.mention(user).deliver
+    if user
+      UserMailer.mention(user).deliver
+    end
   end
 end
