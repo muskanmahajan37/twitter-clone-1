@@ -1,0 +1,9 @@
+<%= form_for @post, html: {class: "form"}, remote: true do |f| %>
+  <%= render 'layouts/errors', :object => @post %>
+
+  <div class="form-group">
+    <%= f.text_field :content, class: "form-control" %>
+  </div>
+
+  <%= f.submit "Twist it up!", class: "btn btn-success" %>
+<% end %>

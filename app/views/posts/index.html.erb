@@ -1,7 +1,5 @@
-<h1>Twistz</h1>
-
-<%= link_to "New Twist", new_post_path, id: "new_link", remote: true %>
-
+<%= link_to "New Twist", new_post_path, id: "new_post_link", class: "btn btn-lg btn-primary", remote: true %>
+<br><br>
 <div id="posts_list">
 <%= render @posts %>
 </div>
