@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 
   validates_presence_of :name
 
+  has_many :posts
+
   def send_welcome_message
     UserMailer.signup_confirmation(self).deliver
   end
