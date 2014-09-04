@@ -11,6 +11,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'textacular', '~> 3.0'
 # use older version of nokogiri due to issues on VMs
 gem 'nokogiri', '1.5.9'
 
