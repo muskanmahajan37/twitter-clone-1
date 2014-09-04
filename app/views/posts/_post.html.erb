@@ -1,0 +1,5 @@
+<p>
+  <%= link_to "#{post.content}", post_path(post) %>
+  <br>
+  Twisted by <%= link_to "#{post.user.name}", user_path(user) %>
+</p>
