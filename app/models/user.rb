@@ -15,4 +15,8 @@ class User < ActiveRecord::Base
   def send_welcome_message
     UserMailer.signup_confirmation(self).deliver
   end
+
+  def subscribe user
+    self.subscriptions.create(user_id: user.id, subscriber_id: self.id)
+  end
 end
