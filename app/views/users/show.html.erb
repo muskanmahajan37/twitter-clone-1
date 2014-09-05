@@ -1,12 +1,8 @@
 <h1><%= @user.name %></h1>
 
-<h3>Followers: <%= @user.followers.count %></h3>
+<%= render 'relationships/form' %>
 
-<%= form_for Relationship.new, remote: true do |f| %>
-  <%= f.hidden_field :follower_id, :value => current_user.id %>
-  <%= f.hidden_field :followed_id, :value => @user.id %>
-  <%= f.submit "Follow", class: "btn btn-success" %>
-<% end %>
+<h3>Followers: <span id="follower-count"><%= @user.followers.count %></span></h3>
 
 <h2>Twists</h2>
 
