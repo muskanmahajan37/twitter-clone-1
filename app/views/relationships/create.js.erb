@@ -1,0 +1,10 @@
+jQuery.fn.refreshOnClick = function() {
+  this.find('input[type=submit]').click(function() {
+    $(this).hide();
+  });
+  return this;
+}
+
+$(function() {
+  $('#follower-count').refreshOnClick();
+});
