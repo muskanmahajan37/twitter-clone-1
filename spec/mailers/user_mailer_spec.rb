@@ -40,4 +40,23 @@ RSpec.describe UserMailer, :type => :mailer do
       expect(mail.body.encoded).to_not be_empty
     end
   end
+
+  describe "spotted" do
+    before(:each) do
+      ActionMailer::Base.deliveries.clear
+      @user = FactoryGirl.create(:user)
+    end
+
+    let(:mail) { UserMailer.spotted(@user) }
+
+    it "renders the headers" do
+      expect(mail.subject).to eq("You're gettin' spotted on")
+      expect(mail.to).to eq([@user.email])
+      expect(mail.from).to eq(["get@twisted.com"])
+    end
+
+    it "renders the body" do
+      expect(mail.body.encoded).to_not be_empty
+    end
+  end
 end

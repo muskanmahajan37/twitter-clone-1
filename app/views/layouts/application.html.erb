@@ -12,6 +12,8 @@
     <div class="container-fluid">
         <ul class="nav navbar-nav">
           <li><a href="/" class="navbar-brand">Twister</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
             <li><%= link_to "#{current_user.name}", edit_user_registration_path %></li>
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
@@ -30,7 +32,5 @@
       </div>
     </div>
   </div>
-
-  <%= params.inspect %>
 </body>
 </html>
